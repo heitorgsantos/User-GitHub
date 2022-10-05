@@ -1,0 +1,14 @@
+com/mact/ReactNativeFlipper.java
+ com.mact.ReactNativeFlipper
+ com.mact.ReactNativeFlipper$1
+ com.mact.ReactNativeFlipper$2
+ com.mact.ReactNativeFlipper$2$1
+com/mact/BuildConfig.java
+ com.mact.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/mact/MainApplication.java
+ com.mact.MainApplication
+ com.mact.MainApplication$1
+com/mact/MainActivity.java
+ com.mact.MainActivity
