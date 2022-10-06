@@ -1,7 +1,14 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://api.github.com/users'
+  baseURL: 'https://api.github.com/users',
 });
 
-export default instance;
+const searchApi = axios.create({
+  baseURL: 'https://publica.cnpj.ws/',
+});
+
+module.exports = {
+  instance,
+  searchApi,
+};

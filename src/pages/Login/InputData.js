@@ -70,7 +70,7 @@ function InputData({navigation}) {
             colorScheme="blueGray"
             onPress={() => {
               !validaEmail(user) && !validaSenha(password)
-                ? navigation.navigate('Home')
+                ? navigation.navigate('Teste')
                 : console.log('Error aqui');
             }}>
             Entrar

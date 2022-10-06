@@ -1,8 +1,9 @@
+import { Text } from 'native-base'
 import React from 'react'
 
 function Repositorio() {
   return (
-    <div>Repositorio</div>
+    <Text>Casa</Text>
   )
 }
 

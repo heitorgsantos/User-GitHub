@@ -25,7 +25,7 @@
 17        android:allowBackup="false"
 17-->/home/heitor/Documentos/Projetos/macT/android/app/src/main/AndroidManifest.xml:11:7-34
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.5.0] /home/heitor/.gradle/caches/transforms-2/files-2.1/eebedfd6526cd5539e0a44e6886856e3/core-1.5.0/AndroidManifest.xml:24:18-86
+18-->[androidx.core:core:1.6.0] /home/heitor/.gradle/caches/transforms-2/files-2.1/67ff0aaf930f65024e6c37d99bc9e852/core-1.6.0/AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
 20-->/home/heitor/Documentos/Projetos/macT/android/app/src/main/AndroidManifest.xml:9:7-41

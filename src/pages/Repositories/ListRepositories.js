@@ -42,7 +42,7 @@ function ListRepositories({name, description, language}) {
             s>
             {language}
           </Text>
-          <ButtonEvent name={name} />
+          <ButtonEvent name={name}/>
         </Box>
       </HStack>
     </Box>

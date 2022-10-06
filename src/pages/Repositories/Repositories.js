@@ -13,7 +13,7 @@ import React, {useEffect, useState} from 'react';
 import {fetchRepositories} from '../../service/request';
 import ListRepositories from './ListRepositories';
 
-function Repositories({navigation}) {
+function Repositories() {
   const [repositorio, setRepositories] = useState([]);
 
   const loading = async () => {
@@ -34,7 +34,7 @@ function Repositories({navigation}) {
           data={repositorio}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <ListRepositories {...item} navigation={navigation}/>
+            <ListRepositories {...item} />
           )}
         />
       </Box>
