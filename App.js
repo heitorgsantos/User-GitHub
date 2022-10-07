@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, NativeBaseProvider, extendTheme, ScrollView} from 'native-base';
 import Router from './src/service/Router';
 
-function App({navigation}) {
+function App() {
   const theme = extendTheme({
     colors: {
       primary: {},
