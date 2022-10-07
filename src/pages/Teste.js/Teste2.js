@@ -12,7 +12,7 @@ function Teste2() {
   };
 
   return (
-    <>
+    <Center w='100%' h={'100%'}>
       <Modal isOpen={modalVisible} onClose={setModalVisible} size={size}>
         <Modal.Content maxH="212">
           <Modal.CloseButton />
@@ -48,7 +48,7 @@ function Teste2() {
           </Modal.Footer>
         </Modal.Content>
       </Modal>
-      <Center>
+      <Center justifyContent={'center'}>
         <VStack space={4}>
           {['xs', 'sm', 'md', 'lg', 'xl', 'full'].map(size => {
             return (
@@ -59,7 +59,7 @@ function Teste2() {
           })}
         </VStack>
       </Center>
-    </>
+    </Center>
   );
 }
 
