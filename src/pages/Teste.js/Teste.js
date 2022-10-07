@@ -2,12 +2,13 @@ import {
   Box,
   Button,
   Center,
+  Container,
   Heading,
   HStack,
   Input,
-  ScrollView,
   Text,
 } from 'native-base';
+import { ScrollView, StyleSheet } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {returnCNPJ} from '../../service/request';
 
@@ -17,7 +18,7 @@ function Teste({navigation}) {
   const [update, setUpdate] = useState(false);
   const [disabledBtn, setDisableBtn] = useState(true);
 
-  // 45.997.418/0001-53
+  // 45997418000153
   // 47960950000121
   /**Função busca cnpj e retorna todos os dados */
   const loadingApi = async () => {
@@ -45,48 +46,50 @@ function Teste({navigation}) {
   useEffect(() => {}, [update]);
 
   return (
-    <ScrollView backgroundColor={'amber.50'}  >
-      <Center w='100%' h={'100%'} alignItems="center" >
-        <Center  pt={2}>
+    <ScrollView justifyContent='center' alignItems='center'  >
+      <Center w={'100%'} h='100%' >
+        <Container alignItems="center">
           <Heading size={12} w="100%" alignSelf={'center'}>
             Faça sua consulta aqui!
           </Heading>
-        </Center>
-        {/* {'atualizado_em' in cnpj === true ? (
-          <RenderItem data={cnpj} />
-        ) : (
-          <Text>Insira o CNPJ no campo abaixo!</Text>
-        )} */}
-        <Input
-          my={3}
-          value={inputCnpj}
-          type="text"
-          onChangeText={setInputCnpj}
-          w="92%"
-          variant="outline"
-        />
+          <Input
+            my={3}
+            value={inputCnpj}
+            type="text"
+            onChangeText={setInputCnpj}
+            w="100%"
+            variant="outline"
+          />
 
-        <Box w={'100%'}>
-          <Text pl={2} py={3}>
-            Você pode consultar apenas 3 vezez por minuto
-          </Text>
-          <HStack space={3} justifyContent="center">
-            <Button w={'30%'} onPressIn={() => loadingApi()}>
-              Enviar
-            </Button>
-            <Button
-              w={'30%'}
-              disabled={disabledBtn}
-              backgroundColor={disabledBtn === true ? '#ccc' : '#000'}
-              onPress={() => navigation.navigate('Resposta', cnpj)}>
-              Ver Resultados
-            </Button>
-            <Button onPress={() => newSearch()}>Nova Busca</Button>
-          </HStack>
-        </Box>
+          <Box w={'100%'}>
+            <Text pl={2} py={3}>
+              Você pode consultar apenas 3 vezez por minuto
+            </Text>
+            <HStack space={3} justifyContent="center" w={'100%'}>
+              <Button w={'25%'} size={'sm'} onPressIn={() => loadingApi()}>
+                Enviar
+              </Button>
+              <Button
+              size={'sm'}
+                w={'40%'}
+                disabled={disabledBtn}
+                backgroundColor={disabledBtn === true ? '#ccc' : '#000'}
+                onPress={() => navigation.navigate('Resposta', cnpj)}>
+                Ver Resultados
+              </Button>
+              <Button w={'25%'} size={'sm'} onPress={() => newSearch()}>Nova Busca</Button>
+            </HStack>
+          </Box>
+        </Container>
       </Center>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  main: {
+    backgroundColor:'#000'
+  }
+})
 
 export default Teste;

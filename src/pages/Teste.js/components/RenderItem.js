@@ -10,7 +10,7 @@ function RenderItem({route}) {
   const {cnpj, situacao_cadastral, logradouro, numero, bairro, cep} =
     estabelecimento;
   return (
-    <Box w={'100%'} h='100%' pl={2}>
+    <Box pl={2}>
       <VStack space={3}>
         <Text>Atualizado: {atualizado_em}</Text>
         <Text>Razão Social: {razao_social}</Text>
