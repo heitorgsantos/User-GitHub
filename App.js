@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, NativeBaseProvider, extendTheme} from 'native-base';
+import {Box, NativeBaseProvider, extendTheme, ScrollView} from 'native-base';
 import Router from './src/service/Router';
 
 function App({navigation}) {
