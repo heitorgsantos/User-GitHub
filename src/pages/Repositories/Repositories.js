@@ -1,19 +1,9 @@
-import {
-  Box,
-  FlatList,
-  HStack,
-  Text,
-  VStack,
-  Heading,
-  Spacer,
-  Center,
-
-} from 'native-base';
+import {Box, FlatList, Heading, Center} from 'native-base';
 import React, {useEffect, useState} from 'react';
-import {fetchRepositories} from '../../service/request';
+import { fetchRepositories} from '../../service/request';
 import ListRepositories from './ListRepositories';
 
-function Repositories() {
+function Repositories({navigation}) {
   const [repositorio, setRepositories] = useState([]);
 
   const loading = async () => {
@@ -34,7 +24,7 @@ function Repositories() {
           data={repositorio}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <ListRepositories {...item} />
+            <ListRepositories {...item} navigation={navigation} />
           )}
         />
       </Box>

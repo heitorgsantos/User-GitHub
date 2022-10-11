@@ -6,11 +6,13 @@ import {
   Heading,
   HStack,
   Input,
+  Spacer,
   Text,
 } from 'native-base';
-import { ScrollView, StyleSheet } from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {returnCNPJ} from '../../service/request';
+import {validaCNPJ} from '../../utils/validaCnpk';
 
 function Teste({navigation}) {
   const [cnpj, setCnpj] = useState({});
@@ -46,19 +48,24 @@ function Teste({navigation}) {
   useEffect(() => {}, [update]);
 
   return (
-    <ScrollView justifyContent='center' alignItems='center'  >
-      <Center w={'100%'} h='100%' >
+    <ScrollView justifyContent="center" alignItems="center">
+      <Center w={'100%'} h="100%">
         <Container alignItems="center">
-          <Heading size={12} w="100%" alignSelf={'center'}>
-            Faça sua consulta aqui!
+          <Heading size={12} fontSize="26px" w="100%" color={'#02A2ED'} alignSelf={'center'}>
+            Consulta CNPJ
           </Heading>
-          <Input
+          <Box mb={85}>
+            <Text>Aplicativo gratuito para consulta de CNPJ</Text>
+            <Text>Esse aplicatvo é totalmente independente do Gorverno</Text>
+          </Box  >
+          <Input 
             my={3}
             value={inputCnpj}
             type="text"
             onChangeText={setInputCnpj}
             w="100%"
             variant="outline"
+            placeholder='Insira o numero do CNPJ sem os caracteres!!!'
           />
 
           <Box w={'100%'}>
@@ -66,18 +73,29 @@ function Teste({navigation}) {
               Você pode consultar apenas 3 vezez por minuto
             </Text>
             <HStack space={3} justifyContent="center" w={'100%'}>
-              <Button w={'25%'} size={'sm'} onPressIn={() => loadingApi()}>
+              <Button
+                w={'25%'}
+                size={'sm'}
+                backgroundColor='#02A2ED'
+                onPressIn={() =>
+                  validaCNPJ(inputCnpj) === true
+                    ? loadingApi()
+                    : console.log('error')
+                }>
                 Enviar
               </Button>
+              {console.log(cnpj)}
               <Button
-              size={'sm'}
+                size={'sm'}
                 w={'40%'}
                 disabled={disabledBtn}
-                backgroundColor={disabledBtn === true ? '#ccc' : '#000'}
+                backgroundColor={disabledBtn === true ? '#02A2ED' : '#09EB54'}
                 onPress={() => navigation.navigate('Resposta', cnpj)}>
                 Ver Resultados
               </Button>
-              <Button w={'25%'} size={'sm'} onPress={() => newSearch()}>Nova Busca</Button>
+              <Button w={'25%'} size={'sm'} onPress={() => newSearch()} backgroundColor='#02A2ED'>
+                Nova Busca
+              </Button>
             </HStack>
           </Box>
         </Container>
@@ -88,8 +106,8 @@ function Teste({navigation}) {
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor:'#000'
-  }
-})
+    backgroundColor: '#000',
+  },
+});
 
 export default Teste;

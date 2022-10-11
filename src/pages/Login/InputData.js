@@ -12,7 +12,7 @@ import {
   HStack,
 } from 'native-base';
 import {validaEmail, validaSenha} from '../../validates/validationInput';
-// import Container from '../../components/Container';
+
 
 function InputData({navigation}) {
   const [user, setUser] = useState('');
@@ -37,7 +37,7 @@ function InputData({navigation}) {
           color="coolGray.600"
           fontWeight="medium"
           size="xs">
-          Faça Login para continuaar!
+          Faça Login para continuar!
         </Heading>
 
         <VStack space={3} mt="5">
@@ -62,15 +62,16 @@ function InputData({navigation}) {
               }}
               alignSelf="flex-end"
               mt="1">
-              Forget Password?
+              Esqueceu a senha?
             </Link>
           </FormControl>
           <Button
             mt="2"
             colorScheme="blueGray"
+            backgroundColor={'#02A2ED'}
             onPress={() => {
               !validaEmail(user) && !validaSenha(password)
-                ? navigation.navigate('Teste')
+                ? navigation.navigate('Home')
                 : console.log('Error aqui');
             }}>
             Entrar
@@ -82,7 +83,7 @@ function InputData({navigation}) {
               _dark={{
                 color: 'warmGray.200',
               }}>
-              I'm a new user.{' '}
+              Eu sou um novo usuário.{' '}
             </Text>
             <Link
               _text={{
@@ -91,7 +92,7 @@ function InputData({navigation}) {
                 fontSize: 'sm',
               }}
               href="#">
-              Sign Up
+              Cadastre-se
             </Link>
           </HStack>
         </VStack>

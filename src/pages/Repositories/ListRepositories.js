@@ -1,9 +1,15 @@
 import React from 'react';
-import {Box, HStack, VStack, Text, Spacer} from 'native-base';
-import ButtonEvent from './ButtonEvent';
-function ListRepositories({name, description, language}) {
+import {Box, HStack, VStack, Text, Spacer, Button} from 'native-base';
+function ListRepositories({id,name, description, language, navigation}) {
+
+  // function handleClick(e) {
+  //   e.preventDefault()
+  //   console.log(e);
+  // }
+
   return (
     <Box
+    key={id}
       borderBottomWidth="1"
       _dark={{
         borderColor: 'muted.50',
@@ -42,7 +48,7 @@ function ListRepositories({name, description, language}) {
             s>
             {language}
           </Text>
-          <ButtonEvent name={name}/>
+          <Button onPress={() => navigation.navigate('Repositorio', name) } size={'sm'}>Repositório</Button>
         </Box>
       </HStack>
     </Box>
